@@ -17,9 +17,9 @@ import numpy as np
 # ✅ Load Model & Scaler (cached — heavy ops only once per session)
 @st.cache_resource(show_spinner=False)
 def load_model_and_scaler():
-    with open("model.pkl", "rb") as model_file:
+    with open("spg_dep/model.pkl", "rb") as model_file:
         model = pickle.load(model_file)
-    with open("scaler.pkl", "rb") as scaler_file:
+    with open("spg_dep/scaler.pkl", "rb") as scaler_file:
         scaler = pickle.load(scaler_file)
     return model, scaler
 
@@ -620,4 +620,5 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
