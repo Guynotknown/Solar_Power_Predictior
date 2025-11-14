@@ -495,6 +495,16 @@ div[data-testid="stVerticalBlock"] > div:first-child {
 </style>
 """, unsafe_allow_html=True)
 
+# =========================================================
+#  SIDEBAR NAVIGATION (Missing earlier)
+# =========================================================
+st.sidebar.title("Navigation")
+page = st.sidebar.radio(
+    "Go to:",
+    ["Prediction", "EDA"],
+    index=0
+)
+
 # ==================== Layout ====================
 col1, col2 = st.columns([7, 3], gap="large")
 
@@ -631,6 +641,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
