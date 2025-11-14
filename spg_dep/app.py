@@ -498,7 +498,7 @@ div[data-testid="stVerticalBlock"] > div:first-child {
 # =========================================================
 #  SIDEBAR NAVIGATION (Missing earlier)
 # =========================================================
-st.sidebar.title(""Go to")
+st.sidebar.title("Go to")
 page = st.sidebar.radio(
     ["Prediction", "EDA"],
     index=0
@@ -640,6 +640,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
