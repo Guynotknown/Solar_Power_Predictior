@@ -383,6 +383,13 @@ html("""
 import base64
 
 # Encode your local PNG
+def load_image_base64(path):
+    with open(path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+# Load solar panel image from /spg_dep/solarpanel.png
+img_base64 = load_image_base64("spg_dep/solarpanel.png")
+
 st.markdown(f"""
 <style>
   /* === Solar Panel Image === */
@@ -624,6 +631,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
