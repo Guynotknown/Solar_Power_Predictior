@@ -2,11 +2,6 @@ import streamlit as st
 import pickle
 from streamlit.components.v1 import html
 import os
-st.write("Working directory:", os.getcwd())
-st.write("Files in root:", os.listdir())
-st.write("Files in spg_dep:", os.listdir("spg_dep"))
-
-
 # Page configuration
 st.set_page_config(page_title="Power Pred", page_icon="⚡",layout="wide")
 
@@ -606,6 +601,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
