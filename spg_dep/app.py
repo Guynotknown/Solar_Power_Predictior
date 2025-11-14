@@ -2,6 +2,23 @@ import streamlit as st
 import pickle
 from streamlit.components.v1 import html
 import os
+
+st.markdown("""
+<style>
+/* Force sidebar above all page layers */
+section[data-testid="stSidebar"] {
+    position: relative !important;
+    z-index: 10000 !important;   /* high so sidebar sits above floating art */
+    pointer-events: auto !important; /* ensure it receives clicks */
+}
+
+/* Ensure app container sits behind sidebar visually */
+[data-testid="stAppViewContainer"] {
+    z-index: 1 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Page configuration
 st.set_page_config(page_title="Power Pred", page_icon="⚡",layout="wide")
 
@@ -366,9 +383,6 @@ html("""
 import base64
 
 # Encode your local PNG
-with open("solarpanel.png", "rb") as f:
-    img_base64 = base64.b64encode(f.read()).decode()
-
 st.markdown(f"""
 <style>
   /* === Solar Panel Image === */
@@ -378,8 +392,8 @@ st.markdown(f"""
       left: 0;
       width: 480px;
       height: auto;
-      z-index: 999;  /* 🚀 Bring it above sidebar visuals */
-      pointer-events: none; /* Still allows sidebar clicks */
+      z-index: 50;  /* lowered so sidebar stays clickable and visible */
+      pointer-events: none; /* still allows sidebar clicks */
       opacity: 0.97;
       filter: drop-shadow(0px 6px 14px rgba(0,0,0,0.25));
       animation: floaty 10s ease-in-out infinite alternate;
@@ -394,7 +408,7 @@ st.markdown(f"""
 
   /* Sidebar layer locked to prevent flicker */
   section[data-testid="stSidebar"] {{
-      z-index: 10 !important;  /* keep below solar panel but still interactive */
+      z-index: 10000 !important;  /* keep above solar panel */
       position: relative !important;
   }}
 
@@ -610,6 +624,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
