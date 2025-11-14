@@ -5,6 +5,15 @@ import os
 # Page configuration
 st.set_page_config(page_title="Power Pred", page_icon="⚡",layout="wide")
 
+st.markdown("""
+<style>
+[data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Load Model & Scaler (cached, no UI inside)
 # =========================================================
 # ⚡ OPTIMIZED MODEL LOAD (WITH SINGLE TOAST)
@@ -601,6 +610,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
