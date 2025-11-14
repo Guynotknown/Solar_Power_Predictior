@@ -405,25 +405,6 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # =============================
-#import streamlit as st
-import pickle
-import numpy as np
-
-# ==================== Load Model & Scaler ====================
-@st.cache_resource
-def load_model_and_scaler():
-    with open("C:/Users/delta/OneDrive/Desktop/spg_dep/model.pkl", "rb") as model_file:
-        model = pickle.load(model_file)
-    with open("C:/Users/delta/OneDrive/Desktop/spg_dep/scaler.pkl", "rb") as scaler_file:
-        scaler = pickle.load(scaler_file)
-    return model, scaler
-
-try:
-    model, scaler = load_model_and_scaler()
-except Exception as e:
-    st.error(f"⚠️ Could not load model or scaler: {e}")
-    st.stop()
-
 # ==================== Custom CSS ====================
 st.markdown("""
 <style>
@@ -625,6 +606,7 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
