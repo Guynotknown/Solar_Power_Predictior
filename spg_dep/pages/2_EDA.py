@@ -186,6 +186,12 @@ for img, caption in plots:
 # ==========================
 # DOWNLOAD SECTION
 # ==========================
+# ==========================
+# DOWNLOAD SECTION
+# ==========================
+# ==========================
+# DOWNLOAD SECTION
+# ==========================
 st.markdown("<h3 style='margin-top:50px;'>📥 Downloads</h3>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
@@ -199,8 +205,15 @@ def download_button(file_path, label, icon):
     else:
         st.warning(f"⚠️ {file_path} not found.")
 
+# Correct file paths (from pages → parent folder)
+csv_path = os.path.join(os.path.dirname(__file__), "..", "solar_power.csv")
+ipynb_path = os.path.join(os.path.dirname(__file__), "..", "spg_model.ipynb")
+
 with col1:
-    download_button("solarpowergeneration.csv", "Download Dataset", "📁")
+    download_button(csv_path, "Download Dataset", "📁")
 with col2:
-    download_button("SPG_Model.ipynb", "Download Notebook", "💻")
+    download_button(ipynb_path, "Download Notebook", "💻")
+
+
+
 
