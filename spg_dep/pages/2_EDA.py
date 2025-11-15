@@ -206,13 +206,14 @@ def download_button(file_path, label, icon):
         st.warning(f"⚠️ {file_path} not found.")
 
 # Correct file paths (from pages → parent folder)
-csv_path = os.path.join(os.path.dirname(__file__), "..", "solar_power.csv")
-ipynb_path = os.path.join(os.path.dirname(__file__), "..", "spg_model.ipynb")
+csv_path = os.path.join(os.path.dirname(__file__), "..", "solarpowergeneration.csv")
+ipynb_path = os.path.join(os.path.dirname(__file__), "..", "SPG_Model.ipynb")
 
 with col1:
     download_button(csv_path, "Download Dataset", "📁")
 with col2:
     download_button(ipynb_path, "Download Notebook", "💻")
+
 
 
 
