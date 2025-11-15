@@ -510,7 +510,7 @@ with col2:
     scaled_input = scaler.transform(features)
 
     # ☀️ Predict button (sun theme)
-    predict_button = st.button("☀️ Generate Power", use_container_width=True)
+    predict_button = st.button("☀️ Predict Power Generated", use_container_width=True)
 
     # 🌤️ Output Box
     if predict_button:
@@ -602,5 +602,6 @@ st.markdown("""
   <a href="https://github.com/Guynotknown" target="_blank">github.com/Guynotknown</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
