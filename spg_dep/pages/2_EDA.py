@@ -1,7 +1,8 @@
 import streamlit as st
 import base64
 import os
-
+# Correct base path to images folder
+IMAGE_DIR = os.path.join(os.path.dirname(__file__), "..", "images")
 # ==========================
 # PAGE CONFIG
 # ==========================
@@ -171,10 +172,14 @@ plots = [
 
 for img, caption in plots:
     st.markdown(f"<div class='card'>", unsafe_allow_html=True)
-    if os.path.exists(img):
-        st.image(img, use_container_width=False, width=700)
+
+    img_path = os.path.join(IMAGE_DIR, img)
+
+    if os.path.exists(img_path):
+        st.image(img_path, use_container_width=False, width=700)
     else:
-        st.warning(f"Image '{img}' not found in working directory.")
+        st.warning(f"Image '{img_path}' not found.")
+
     st.markdown(f"<p>{caption}</p>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -198,3 +203,4 @@ with col1:
     download_button("solarpowergeneration.csv", "Download Dataset", "📁")
 with col2:
     download_button("SPG_Model.ipynb", "Download Notebook", "💻")
+
